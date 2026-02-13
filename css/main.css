@@ -56,3 +56,27 @@ header {
 .icons {
   height: 2.5rem;
 }
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  background-color: #d9d9d9;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.footer-menu {
+  display: flex;
+  margin-left: auto;
+}
+
+footer ul {
+  list-style: none;
+  margin-left: 2rem;
+}
+
+footer li {
+  line-height: 1.4rem;
+}
