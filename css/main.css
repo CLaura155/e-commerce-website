@@ -94,6 +94,23 @@ header {
   padding: 0.75rem 0.7rem;
 }
 
+/* Products grid (products.html) */
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.products-container img {
+  width: 60%;
+  margin: 1rem;
+}
+
+.products-container img:hover {
+  width: 90%;
+}
+
 /* Footer */
 
 footer {
