@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 /* Text styles */
 
 * {
@@ -114,6 +118,19 @@ header {
 .welcome-img {
   grid-area: 1 / 1;
   width: 100%;
+}
+
+button {
+  background-color: white;
+  padding: 0.75rem 0.7rem;
+  border: 0;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #eeeeee;
+  cursor: pointer;
 }
 
 /* Image carousel section (index.html) */
