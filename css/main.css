@@ -145,15 +145,42 @@ header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  align-items: flex-start;
+  margin: 1rem 1rem;
+}
+
+figure {
+  margin: 0;
+  align-content: center;
 }
 
 .products-container img {
   width: 60%;
-  margin: 1rem;
 }
 
 .products-container img:hover {
   width: 90%;
+}
+
+.img-container {
+  margin: 0 0 1rem;
+}
+
+.title-card {
+  background-color: #eeeeee;
+  margin: 0 0 0.1rem 0;
+  height: 3rem;
+  width: 90%;
+  align-content: center;
+  justify-items: center;
+  display: none;
+}
+
+.title-card-text {
+  width: max-content;
+  text-align: center;
+  display: none;
+  margin: 0;
 }
 
 /* Footer */
