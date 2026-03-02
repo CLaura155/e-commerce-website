@@ -205,16 +205,29 @@ figure {
   align-content: center;
 }
 
-.products-container img {
-  width: 60%;
+.img-container {
+  margin: 0 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.products-container img:hover {
+.img-in-grid {
+  grid-area: 1 / 1;
+}
+
+.artwork-img {
+  width: 60%;
+  grid-area: 1 / 1;
+}
+
+.artwork-img:hover {
   width: 90%;
 }
 
-.img-container {
-  margin: 0 0 1rem;
+.basket-outline {
+  width: 2rem;
+  grid-area: 1 / 1;
+  margin: 0.6rem;
 }
 
 .title-card {
