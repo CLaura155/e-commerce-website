@@ -308,24 +308,24 @@ figure {
   margin-left: 1rem;
 }
 
-.cart-item {
+.cart-item-card {
   display: flex;
   flex-direction: row;
   margin: 2rem 0;
 }
 
-.cart-item p,
-.cart-item ul {
+.cart-item-card p,
+.cart-item-card ul {
   margin-right: 3rem;
   margin-top: 0;
 }
 
-.cart-item ul {
+.cart-item-card ul {
   list-style: none;
   padding-left: 0;
 }
 
-.cart-item li {
+.cart-item-card li {
   margin-bottom: 0.8rem;
 }
 
@@ -346,7 +346,7 @@ figure {
   height: max-content;
 }
 
-#product-quantity {
+.product-quantity {
   font-size: 1rem;
   margin: 0 2rem;
   width: 3rem;
