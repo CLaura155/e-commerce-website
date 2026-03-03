@@ -20,6 +20,7 @@ for (let i = 0; i < basketItems.length; i++) {
 }
 
 function newItemCard(i, newItem) {
+  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I
   const newItemCard = document.createElement("section");
   newItemCard.classList.add("cart-item-card");
   const newItemImg = document.createElement("img");
@@ -56,6 +57,7 @@ function newItemCard(i, newItem) {
   newQuantityButtons.appendChild(newMinusButton);
   newQuantityButtons.appendChild(newProductQuantity);
   newQuantityButtons.appendChild(newPlusButton);
+  //   End of adapted lines of code
 
   newItemImg.src = newItem.img;
   newItemName.innerText = productTitles[basketItems[i].id - 1];
