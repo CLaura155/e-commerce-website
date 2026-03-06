@@ -26,7 +26,7 @@ for (let i = 0; i < basketItems.length; i++) {
 
 function createCard(newItem, i) {
   let propertyList = {};
-  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I
+  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
   const newItemCard = document.createElement("section");
   newItemCard.classList.add("cart-item-card");
   const newItemImg = document.createElement("img");
@@ -64,7 +64,7 @@ function createCard(newItem, i) {
   newItemCard.dataset.id = propertyList.id;
   newItemCard.dataset.quantity = propertyList.quantity;
 
-  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I
+  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
 
   newItemCard.appendChild(newItemImg);
   newItemCard.appendChild(newItemDetails);
@@ -89,6 +89,7 @@ function idUpdate() {
   }
 }
 
+// The next lines of code are inspired by/adapted from ChatGPT from the following link: https://chatgpt.com/s/t_69a8739aa7208191853470f52bc66fb3 accessed on 04.03.2026.:
 function changeQuantity() {
   let card = this.closest(".cart-item-card");
   let cardQuantity = card.dataset.quantity;
@@ -107,6 +108,7 @@ function changeQuantity() {
     productQuantity.innerText = productQuantity.value;
     card.dataset.quantity = cardQuantity;
   }
+  // End of inspired/adapted lines of code
   if (cardQuantity === 0) {
     basketItems.splice(cardID, 1);
   } else {
