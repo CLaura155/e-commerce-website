@@ -299,6 +299,15 @@ figure {
 
 /* cart.html */
 
+#inline-link {
+  text-decoration: underline;
+  text-decoration-color: #999999;
+}
+
+#inline-link:hover {
+  color: #999999;
+}
+
 .cart-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;

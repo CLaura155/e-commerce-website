@@ -1,4 +1,7 @@
-let basketItems = JSON.parse(localStorage.basketItems);
+let basketItems = [];
+if (localStorage.basketItems) {
+  basketItems = JSON.parse(localStorage.basketItems);
+}
 const cartItemGrid = document.querySelector(".cart-items");
 const productTitles = [
   "Hope",
@@ -15,12 +18,22 @@ const productTitles = [
   "My friend and I - my side",
 ];
 
+emptyCartMessage();
+
 for (let i = 0; i < basketItems.length; i++) {
   createCard(basketItems[i], i);
   let quantityButtons = document.querySelectorAll(".quantity-button");
   for (let i = 0; i < quantityButtons.length; i++) {
     quantityButtons[i].addEventListener("click", changeQuantity);
     quantityButtons[i].addEventListener("click", idUpdate);
+  }
+}
+
+function emptyCartMessage() {
+  if (basketItems.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.innerHTML = `Your shopping cart is empty. <a id="inline-link" href="products.html">Discover our products`;
+    cartItemGrid.appendChild(emptyMessage);
   }
 }
 
@@ -115,6 +128,7 @@ function changeQuantity() {
     basketItems[cardID].quantity = cardQuantity;
   }
   localStorage.basketItems = JSON.stringify(basketItems);
+  emptyCartMessage();
 }
 
 /* Parent-child structure for item card in cart:
