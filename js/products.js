@@ -46,9 +46,11 @@ for (let i = 0; i < basketIcons.length; i++) {
 }
 
 function saveToBasket() {
+  let baseQuantity = 1;
   let basketItem = {
     id: this.dataset.id,
     img: this.dataset.img,
+    quantity: baseQuantity,
   };
 
   for (let i = 0; i < basketArr.length; i++) {

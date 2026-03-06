@@ -346,6 +346,10 @@ figure {
   height: max-content;
 }
 
+.quantity-buttons-cart img:hover {
+  cursor: pointer;
+}
+
 .product-quantity {
   font-size: 1rem;
   margin: 0 2rem;
