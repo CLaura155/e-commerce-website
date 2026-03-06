@@ -117,41 +117,6 @@ function changeQuantity() {
   localStorage.basketItems = JSON.stringify(basketItems);
 }
 
-// let quantityButtonsContainers = document.querySelectorAll(
-//   ".quantity-buttons-cart",
-// );
-// for (let i = 0; i < quantityButtonsContainers.length; i++) {
-//   quantityButtonsContainers[i]
-//     .querySelector(".quantity-button")
-//     .addEventListener("click", changeQuantity());
-
-//   function changeQuantity() {
-//     const productQuantity = document.querySelector(".product-quantity-number");
-//     const minusButton = document.querySelector("minus-button");
-//     let quantity = productQuantity.textContent;
-
-//     if (event.target.class === "minus-button" && quantity > 1) {
-//       quantity--;
-//       if (quantity === 1) {
-//         minusButton.style.opacity = "0%";
-//       }
-//     } else if (event.target.class === "plus-button") {
-//       quantity++;
-//       minusButton.style.opacity = "100%";
-//     }
-
-//     productQuantity.textContent = quantity;
-
-//     newItemCard(i, basketItems[i]);
-//     addToLocalStorage(i, basketItems[i]);
-//   }
-// }
-
-// function addToLocalStorage(i, newItem) {
-//   basketItems.splice(i, 1, newItem);
-//   localStorage.basketItems = JSON.stringify(basketItems);
-// }
-
 /* Parent-child structure for item card in cart:
 <section class="cart-item-card">
     <img class="item-img" src="" alt="Cart item">
