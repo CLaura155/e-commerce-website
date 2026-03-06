@@ -63,7 +63,7 @@ function createCard(newItem, i) {
   newPlusButton.classList.add("quantity-button", "plus-button");
   newPlusButton.alt = "Plus button";
   const newItemTotalPrice = document.createElement("p");
-  newItemTotalPrice.innerText = "Total price";
+  newItemTotalPrice.id = "total-price-text";
   //   End of adapted lines of code
 
   newProductQuantity.value = newItem.quantity;
@@ -74,8 +74,14 @@ function createCard(newItem, i) {
 
   propertyList.id = i;
   propertyList.quantity = 1;
+  propertyList.price = 20;
+  propertyList.totalPrice = propertyList.quantity * propertyList.price;
   newItemCard.dataset.id = propertyList.id;
   newItemCard.dataset.quantity = propertyList.quantity;
+  newItemCard.dataset.price = propertyList.price;
+  newItemCard.dataset.totalPrice = propertyList.totalPrice;
+
+  newItemTotalPrice.innerText = propertyList.totalPrice + ".00 kr";
 
   // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
 
@@ -106,12 +112,15 @@ function idUpdate() {
 function changeQuantity() {
   let card = this.closest(".cart-item-card");
   let cardQuantity = card.dataset.quantity;
+  let cardTotalPrice = card.dataset.totalPrice;
+  let totalPriceText = card.querySelector("#total-price-text");
   if (this.classList.contains("plus-button")) {
     cardQuantity++;
   } else if (this.classList.contains("minus-button")) {
     cardQuantity--;
   }
   let cardID = card.dataset.id;
+  cardTotalPrice = card.dataset.price * cardQuantity;
 
   let productQuantity = card.querySelector(".product-quantity-number");
   if (cardQuantity === 0) {
@@ -120,6 +129,8 @@ function changeQuantity() {
     productQuantity.value = cardQuantity;
     productQuantity.innerText = productQuantity.value;
     card.dataset.quantity = cardQuantity;
+    card.dataset.totalPrice = cardTotalPrice;
+    totalPriceText.innerText = card.dataset.totalPrice + ".00 kr";
   }
   // End of inspired/adapted lines of code
   if (cardQuantity === 0) {
