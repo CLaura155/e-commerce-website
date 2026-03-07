@@ -20,8 +20,17 @@ const productTitles = [
 
 emptyCartMessage();
 
+let cartTotalPrices = {
+  productTotal: 0,
+  deliveryTotal: 0,
+  fullTotal: 0,
+};
+
+cartPrices();
+
 for (let i = 0; i < basketItems.length; i++) {
   createCard(basketItems[i], i);
+  cartPrices();
   let quantityButtons = document.querySelectorAll(".quantity-button");
   for (let i = 0; i < quantityButtons.length; i++) {
     quantityButtons[i].addEventListener("click", changeQuantity);
@@ -82,6 +91,7 @@ function createCard(newItem, i) {
   newItemCard.dataset.totalPrice = propertyList.totalPrice;
 
   newItemTotalPrice.innerText = propertyList.totalPrice + ".00 kr";
+  newItemTotalPrice.value = propertyList.totalPrice;
 
   // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
 
@@ -125,6 +135,7 @@ function changeQuantity() {
   let productQuantity = card.querySelector(".product-quantity-number");
   if (cardQuantity === 0) {
     cartItemGrid.removeChild(card);
+    cartPrices();
   } else {
     productQuantity.value = cardQuantity;
     productQuantity.innerText = productQuantity.value;
@@ -140,6 +151,36 @@ function changeQuantity() {
   }
   localStorage.basketItems = JSON.stringify(basketItems);
   emptyCartMessage();
+  cartPrices();
+}
+
+function cartPrices() {
+  const productTotalText = document.querySelector("#products-total");
+  const deliveryTotalText = document.querySelector("#delivery-total");
+  const fullTotalText = document.querySelector("#full-total");
+  if (basketItems.length != 0) {
+    let itemPrices = document.querySelectorAll(".cart-item-card");
+    cartTotalPrices.productTotal = 0;
+    for (let i = 0; i < itemPrices.length; i++) {
+      cartTotalPrices.productTotal += Number(itemPrices[i].dataset.totalPrice);
+    }
+    if (cartTotalPrices.productTotal != 0) {
+      cartTotalPrices.deliveryTotal = 15;
+    } else {
+      cartTotalPrices.deliveryTotal = 0;
+    }
+    cartTotalPrices.fullTotal =
+      Number(cartTotalPrices.productTotal) +
+      Number(cartTotalPrices.deliveryTotal);
+
+    productTotalText.innerText = cartTotalPrices.productTotal + ".00 kr";
+    deliveryTotalText.innerText = cartTotalPrices.deliveryTotal + ".00 kr";
+    fullTotalText.innerText = cartTotalPrices.fullTotal + ".00 kr";
+  } else {
+    productTotalText.innerText = cartTotalPrices.productTotal + ".00 kr";
+    deliveryTotalText.innerText = cartTotalPrices.deliveryTotal + ".00 kr";
+    fullTotalText.innerText = cartTotalPrices.fullTotal + ".00 kr";
+  }
 }
 
 /* Parent-child structure for item card in cart:
