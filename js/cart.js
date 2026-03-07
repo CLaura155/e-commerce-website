@@ -82,7 +82,7 @@ function createCard(newItem, i) {
   newItemName.innerText = productTitles[newItem.id - 1];
 
   propertyList.id = i;
-  propertyList.quantity = 1;
+  propertyList.quantity = newItem.quantity;
   propertyList.price = 20;
   propertyList.totalPrice = propertyList.quantity * propertyList.price;
   newItemCard.dataset.id = propertyList.id;
