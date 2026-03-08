@@ -6,6 +6,7 @@
     <title>Lau's Photography</title>
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/products.js" defer></script>
+    <script src="js/script.js" defer></script>
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,12 +51,18 @@
           </li>
           </a>
         </ul>
+        <img
+          id="hamburger-menu-icon"
+          class="icons"
+          src="img/icons/hamburger-menu-icon.svg"
+          alt="Hamburger menu icon"
+        />
       </nav>
     </header>
     <main>
       <section class="products-container">
         <figure class="img-container">
-          <a class="img-in-grid" href="#"><img class="artwork-img" src="img/hope.jpg" alt="Hope"></a>
+          <a class="img-in-grid" href="product.html"><img class="artwork-img" src="img/hope.jpg" alt="Hope"></a>
           <img class="basket-outline" data-id="1" data-img="img/hope.jpg" src="img/icons/basket-gray-outline.svg" alt="Basket icon">
           <div class="title-card"><p class="title-card-text">Hope<br>Creator: Laura Chikán</p></div>
         </figure>
@@ -116,20 +123,56 @@
         </figure>
       </section>
     </main>
+    <menu>
+      <ul id="menu-overlay-texts">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About me</a></li>
+        <li><a href="products.html">Shop</a></li>
+      </ul>
+      <ul id="menu-overlay-icons">
+        <li>
+          <a href="#">
+            <img
+              class="icons"
+              src="img/icons/profile-outline.svg"
+              alt="Profile icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img
+              class="icons"
+              src="img/icons/heart-outline.svg"
+              alt="Favourites icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="cart.html">
+            <img
+              class="icons"
+              src="img/icons/basket-outline.svg"
+              alt="Basket icon"
+            />
+          </a>
+        </li>
+      </ul>
+    </menu>
     <footer>
-      <p>&copy; 2026 Lau's Photography</p>
+      <p id="footer-copyright">&copy; 2026 Lau's Photography</p>
       <section class="footer-menu">
-        <ul>
+        <ul id="footer-menu-left">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">About me</a></li>
           <li><a href="products.html">Shop</a></li>
         </ul>
-        <ul>
+        <ul id="footer-menu-right">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Favourites</a></li>
           <li><a href="cart.html">Shopping basket</a></li>
         </ul>
-        <ul>
+        <ul id="footer-menu-center">
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Cookie Settings</a></li>
           <li><a href="#">Terms of Use</a></li>

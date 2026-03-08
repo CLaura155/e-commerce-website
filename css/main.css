@@ -375,10 +375,6 @@ figure {
   grid-area: 1 / 1;
 }
 
-.artwork-img:hover {
-  width: 90%;
-}
-
 .basket-outline {
   width: 2rem;
   grid-area: 1 / 1;
@@ -400,6 +396,40 @@ figure {
   text-align: center;
   display: none;
   margin: 0;
+}
+
+@media screen and (min-width: 801px) {
+  .artwork-img:hover {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .title-card {
+    display: block;
+    width: 60%;
+  }
+  .title-card-text {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+  .artwork-img {
+    width: 80%;
+  }
+  .title-card {
+    width: 80%;
+  }
+  .title-card-text {
+    display: block;
+  }
 }
 
 /* Product page (product.html) */
