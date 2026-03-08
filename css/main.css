@@ -267,19 +267,8 @@ figure {
   font-size: 1rem;
 }
 
-.quantity-buttons {
-  display: flex;
-  justify-content: center;
-}
-
-.quantity-buttons img {
-  width: 2rem;
-}
-
-.quantity-number {
-  font-size: 1.5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+.details-of-ordering {
+  margin-top: 3rem;
 }
 
 .recommended-products {
@@ -373,7 +362,16 @@ figure {
 .cart-summary-details ul {
   list-style: none;
   padding-left: 0;
+}
+
+#cart-total-texts {
   margin-right: 4rem;
+}
+
+#cart-total-text-numbers {
+  justify-items: end;
+  margin-left: auto;
+  margin-right: 1rem;
 }
 
 .cart-summary-details li {
