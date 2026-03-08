@@ -53,10 +53,13 @@ function createCard(newItem, i) {
   newItemCard.classList.add("cart-item-card");
   const newItemImg = document.createElement("img");
   newItemImg.classList.add("item-img");
+  const newItemTexts = document.createElement("section");
+  newItemTexts.classList.add("item-texts");
   const newItemDetails = document.createElement("ul");
   const newItemName = document.createElement("li");
   newItemName.classList.add("item-name");
   const newItemPrice = document.createElement("li");
+  newItemPrice.classList.add("item-price");
   newItemPrice.innerText = "20.00 kr";
   const newQuantityButtons = document.createElement("section");
   newQuantityButtons.classList.add("quantity-buttons-cart");
@@ -96,9 +99,11 @@ function createCard(newItem, i) {
   // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
 
   newItemCard.appendChild(newItemImg);
-  newItemCard.appendChild(newItemDetails);
-  newItemCard.appendChild(newQuantityButtons);
-  newItemCard.appendChild(newItemTotalPrice);
+  newItemCard.appendChild(newItemTexts);
+
+  newItemTexts.appendChild(newItemDetails);
+  newItemTexts.appendChild(newQuantityButtons);
+  newItemTexts.appendChild(newItemTotalPrice);
 
   newItemDetails.appendChild(newItemName);
   newItemDetails.appendChild(newItemPrice);
