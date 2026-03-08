@@ -163,13 +163,14 @@ button:hover {
 }
 
 @media screen and (max-width: 690px) {
-  h1 {
-    margin-top: 1.5rem;
+  .welcome-text h1 {
+    margin-top: 0.3rem;
     margin-bottom: 1rem;
     font-size: 1.7rem;
   }
-  #shop-now-btn {
+  button {
     margin: 0;
+    padding: 0.5rem 0.4rem;
   }
 }
 
@@ -203,10 +204,40 @@ button:hover {
   margin: 0 2.5rem;
 }
 
+.carousel-image-text {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) {
   .img-in-carousel,
   .img-in-carousel-middle {
     width: 10rem;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .carousel-and-text {
+    width: max-content;
+    justify-self: center;
+    align-items: center;
+  }
+  .img-carousel {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .img-in-carousel-middle {
+    margin: 1.5rem 0;
+  }
+  .img-carousel figure {
+    display: flex;
+    align-items: center;
+  }
+  .carousel-image-text {
+    display: inline;
+    height: max-content;
+    background-color: #eeeeee;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
   }
 }
 
@@ -220,7 +251,6 @@ button:hover {
 
 .img-in-box {
   width: 100%;
-  opacity: 70%;
 }
 
 .newsletter-form {
@@ -240,6 +270,43 @@ button:hover {
   margin-top: 3rem;
   background-color: white;
   padding: 0.75rem 0.7rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .newsletter-box {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+  .img-in-box {
+    grid-area: 1 / 1;
+    width: 70%;
+    justify-self: center;
+  }
+  .newsletter-form {
+    width: max-content;
+    justify-self: center;
+    grid-area: 1 / 1;
+  }
+  .form-input {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .img-in-box {
+    display: none;
+  }
+  .newsletter-form {
+    margin: 1rem 0;
+  }
+  .newsletter-form h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+  }
+  .form-titles {
+    margin: 0.5rem 0;
+  }
 }
 
 /* Products grid (products.html) */
@@ -457,4 +524,33 @@ footer ul {
 
 footer li {
   line-height: 1.4rem;
+}
+
+@media screen and (max-width: 800px) {
+  footer ul {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  footer {
+    flex-direction: column;
+  }
+  .footer-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+  .footer-menu ul {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  #footer-menu-right {
+    text-align: right;
+  }
+
+  #footer-menu-center {
+    text-align: center;
+    grid-area: 2 / 1 / auto / span 2;
+  }
 }

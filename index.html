@@ -79,17 +79,30 @@
       <section class="carousel-and-text">
         <h2>Some text here</h2>
         <section class="img-carousel">
-          <img
-            class="img-in-carousel"
-            src="img/light-of-life.jpg"
-            alt="Light of life"
-          />
-          <img
-            class="img-in-carousel-middle"
-            src="img/little-joys-of-life.jpg"
-            alt="Little joys of life"
-          />
-          <img class="img-in-carousel" src="img/take-off.jpg" alt="Take-off" />
+          <figure>
+            <p class="carousel-image-text">Light of life</p>
+            <img
+              class="img-in-carousel"
+              src="img/light-of-life.jpg"
+              alt="Light of life"
+            />
+          </figure>
+          <figure>
+            <img
+              class="img-in-carousel-middle"
+              src="img/little-joys-of-life.jpg"
+              alt="Little joys of life"
+            />
+            <p class="carousel-image-text">Little joys of life</p>
+          </figure>
+          <figure>
+            <p class="carousel-image-text">Take-off</p>
+            <img
+              class="img-in-carousel"
+              src="img/take-off.jpg"
+              alt="Take-off"
+            />
+          </figure>
         </section>
       </section>
       <section class="newsletter-box">
@@ -101,9 +114,9 @@
         <div class="newsletter-form">
           <h1>Subscribe to my newsletter!</h1>
           <div class="form-input">
-            <p>E-mail*</p>
+            <p class="form-titles">E-mail*</p>
             <input type="text" />
-            <p>Name*</p>
+            <p class="form-titles">Name*</p>
             <input type="text" />
           </div>
           <button>Subscribe</button>
@@ -111,19 +124,19 @@
       </section>
     </main>
     <footer>
-      <p>&copy; 2026 Lau's Photography</p>
+      <p id="footer-copyright">&copy; 2026 Lau's Photography</p>
       <section class="footer-menu">
-        <ul>
+        <ul id="footer-menu-left">
           <li><a href="index.html">Home</a></li>
           <li><a href="#">About me</a></li>
           <li><a href="products.html">Shop</a></li>
         </ul>
-        <ul>
+        <ul id="footer-menu-right">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Favourites</a></li>
           <li><a href="cart.html">Shopping basket</a></li>
         </ul>
-        <ul>
+        <ul id="footer-menu-center">
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Cookie Settings</a></li>
           <li><a href="#">Terms of Use</a></li>
