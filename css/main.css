@@ -85,14 +85,18 @@ header {
   margin: 0;
 }
 
-.site-nav ul {
+.site-nav ul,
+menu ul {
   list-style: none;
   display: flex;
-  margin-left: auto;
   align-items: center;
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.site-nav ul {
+  margin-left: auto;
 }
 
 .site-nav li {
@@ -106,6 +110,38 @@ header {
 
 #hamburger-menu-icon {
   display: none;
+}
+
+menu {
+  display: none;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #eeeeee;
+  height: 85vh;
+}
+
+menu ul {
+  width: max-content;
+}
+
+menu li {
+  margin: 0.5rem 0.5rem;
+}
+
+#menu-overlay-texts {
+  flex-direction: column;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+#menu-overlay-icons {
+  margin-left: 0;
+  width: max-content;
+}
+
+#menu-overlay-icons .icons {
+  height: 2.3rem;
 }
 
 @media screen and (max-width: 800px) {
