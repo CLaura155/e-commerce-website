@@ -15,10 +15,10 @@ basketIcon.addEventListener("mouseleave", outlineIcon);
 
 // Basket icon changes to filled version on hovering
 function filledIcon() {
-  basketIcon.src = "/img/icons/basket-filled.svg";
+  basketIcon.src = "img/icons/basket-filled.svg";
 }
 function outlineIcon() {
-  basketIcon.src = "/img/icons/basket-outline.svg";
+  basketIcon.src = "img/icons/basket-outline.svg";
 }
 
 // If the menu icon is hamburger menu (the overlay is closed), it is changed to the close icon,
