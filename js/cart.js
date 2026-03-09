@@ -1,3 +1,4 @@
+// Setting up elements and objects
 let basketItems = [];
 if (localStorage.basketItems) {
   basketItems = JSON.parse(localStorage.basketItems);
@@ -18,6 +19,7 @@ const productTitles = [
   "My friend and I - my side",
 ];
 
+// Checking if the empty cart message needs to be displayed
 emptyCartMessage();
 
 let cartTotalPrices = {
@@ -26,8 +28,10 @@ let cartTotalPrices = {
   fullTotal: 0,
 };
 
+// Updating the prices based on cart items
 cartPrices();
 
+// Calling functions
 for (let i = 0; i < basketItems.length; i++) {
   createCard(basketItems[i], i);
   cartPrices();
@@ -38,6 +42,7 @@ for (let i = 0; i < basketItems.length; i++) {
   }
 }
 
+// Function to determine if empty card message needs to be displayed
 function emptyCartMessage() {
   if (basketItems.length === 0) {
     const emptyMessage = document.createElement("p");
@@ -46,9 +51,13 @@ function emptyCartMessage() {
   }
 }
 
+// Function to create cards for items in cart
 function createCard(newItem, i) {
   let propertyList = {};
-  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
+  //   The following lines of code are adapted from a YouTube video on the following link:
+  //   https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
+
+  // Creating the elements needed for the item card
   const newItemCard = document.createElement("section");
   newItemCard.classList.add("cart-item-card");
   const newItemImg = document.createElement("img");
@@ -78,6 +87,7 @@ function createCard(newItem, i) {
   newItemTotalPrice.id = "total-price-text";
   //   End of adapted lines of code
 
+  // Setting the values to match the product/item and its details (price, quantity)
   newProductQuantity.value = newItem.quantity;
   newProductQuantity.innerText = newProductQuantity.value;
 
@@ -96,8 +106,10 @@ function createCard(newItem, i) {
   newItemTotalPrice.innerText = propertyList.totalPrice + ".00 kr";
   newItemTotalPrice.value = propertyList.totalPrice;
 
-  // The following lines of code are adapted from a YouTube video on this link: https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
+  //   The following lines of code are adapted from a YouTube video on the following link:
+  //   https://www.youtube.com/watch?v=zikLN9XHy4I accessed on 03.03.2026.
 
+  // Adding the elements to the main container newItemCard
   newItemCard.appendChild(newItemImg);
   newItemCard.appendChild(newItemTexts);
 
@@ -113,9 +125,12 @@ function createCard(newItem, i) {
   newQuantityButtons.appendChild(newPlusButton);
   //   End of adapted lines of code
 
+  // Adding the item card to the grid
   cartItemGrid.appendChild(newItemCard);
 }
 
+// Updating the id of the card based on its position in the grid
+// (its needed in case an item upper in the list gets deleted)
 function idUpdate() {
   let cards = document.querySelectorAll(".cart-item-card");
   for (let i = 0; i < cards.length; i++) {
@@ -123,7 +138,10 @@ function idUpdate() {
   }
 }
 
-// The next lines of code are inspired by/adapted from ChatGPT from the following link: https://chatgpt.com/s/t_69a8739aa7208191853470f52bc66fb3 accessed on 04.03.2026.:
+//   The next lines of code are inspired by/adapted from ChatGPT from the following link:
+//   https://chatgpt.com/s/t_69a8739aa7208191853470f52bc66fb3 accessed on 04.03.2026.:
+
+// Changing the quantities of the items using the plus and minus buttons
 function changeQuantity() {
   let card = this.closest(".cart-item-card");
   let cardQuantity = card.dataset.quantity;
@@ -138,6 +156,7 @@ function changeQuantity() {
   cardTotalPrice = card.dataset.price * cardQuantity;
 
   let productQuantity = card.querySelector(".product-quantity-number");
+  // Removing deleted items or updating quantities and item prices
   if (cardQuantity === 0) {
     cartItemGrid.removeChild(card);
     cartPrices();
@@ -148,17 +167,19 @@ function changeQuantity() {
     card.dataset.totalPrice = cardTotalPrice;
     totalPriceText.innerText = card.dataset.totalPrice + ".00 kr";
   }
-  // End of inspired/adapted lines of code
+  //   End of inspired/adapted lines of code
   if (cardQuantity === 0) {
     basketItems.splice(cardID, 1);
   } else {
     basketItems[cardID].quantity = cardQuantity;
   }
+  // Saving changes to localStorage
   localStorage.basketItems = JSON.stringify(basketItems);
   emptyCartMessage();
   cartPrices();
 }
 
+// Updating cart total prices
 function cartPrices() {
   const productTotalText = document.querySelector("#products-total");
   const deliveryTotalText = document.querySelector("#delivery-total");
@@ -190,15 +211,17 @@ function cartPrices() {
 
 /* Parent-child structure for item card in cart:
 <section class="cart-item-card">
-    <img class="item-img" src="" alt="Cart item">
+  <img class="item-img" src="" alt="Cart item">
+  <section class="item-texts">
     <ul>
-        <li class="item-name">Product name</li>
-        <li>20.00 kr</li>
+      <li class="item-name">Product name</li>
+      <li>20.00 kr</li>
     </ul>
     <section class="quantity-buttons-cart">
-        <img src="img/icons/minus-icon.svg" alt="Minus button">
-        <input type="number" name="product-quantity" id="product-quantity">
-        <img src="img/icons/plus-icon.svg" alt="Plus button">
+      <img src="img/icons/minus-icon.svg" alt="Minus button">
+      <input type="number" name="product-quantity" id="product-quantity">
+      <img src="img/icons/plus-icon.svg" alt="Plus button">
     </section>
     <p>Total price</p>
+  </section>
 </section>*/
