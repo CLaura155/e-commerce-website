@@ -27,12 +27,12 @@ function outlineIcon() {
 function openCloseMenu() {
   if (menuIcon.type === "hamburger-menu") {
     menuIcon.type = "close-icon";
-    menuIcon.element.src = "/img/icons/close-icon.svg";
+    menuIcon.element.src = "img/icons/close-icon.svg";
     mainPageContent.style.display = "none";
     menuOverlayStyling();
   } else {
     menuIcon.type = "hamburger-menu";
-    menuIcon.element.src = "/img/icons/hamburger-menu-icon.svg";
+    menuIcon.element.src = "img/icons/hamburger-menu-icon.svg";
     mainPageContent.style.display = "block";
     menuOverlay.style.display = "none";
   }
